@@ -1,0 +1,7 @@
+release_date (date):
+Description: The release date of a movie.
+Example: "1910-08-02"
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date_id (integer):
+Description: Unique identifier for the release date.
+Example: 1
