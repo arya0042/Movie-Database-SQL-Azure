@@ -1,0 +1,9 @@
+iso_639_1 (string):
+Description: ISO 639-1 language code, representing a specific language.
+Example: "hi"
+english_name (string):
+Description: The English name or description of the language.
+Example: "Hindi"
+name (string):
+Description: The name or description of the language in its native language.
+Example: "हिन्दी"
