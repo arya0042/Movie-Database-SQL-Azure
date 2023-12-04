@@ -1,0 +1,15 @@
+vote_average (float):
+Description: The average rating given by users.
+Example: 5.292
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+popularity (float):
+Description: Popularity score of the movie.
+Example: 12.461
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+vote_count (integer):
+Description: The number of votes or ratings the movie has received.
+Example: 12
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+popularity_id (integer):
+Description: Unique identifier for the popularity.
+Example: 1, 2, 3
