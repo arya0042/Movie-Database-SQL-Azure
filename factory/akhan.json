@@ -1,0 +1,9 @@
+{
+	"name": "akhan",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e4c2894f-5eee-4a08-8283-09e3061b02a8",
+		"tenantId": "fb01dea1-df09-4b26-9c13-8d5debad2465"
+	}
+}

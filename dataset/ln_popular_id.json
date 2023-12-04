@@ -1,0 +1,42 @@
+{
+	"name": "ln_popular_id",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkpersonal",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "popularity_id.csv",
+				"folderPath": "storageprivate",
+				"container": "storageprivate"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "vote_average",
+				"type": "String"
+			},
+			{
+				"name": "popularity",
+				"type": "String"
+			},
+			{
+				"name": "vote_count",
+				"type": "String"
+			},
+			{
+				"name": "popularity_id",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

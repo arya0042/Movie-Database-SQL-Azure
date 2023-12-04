@@ -1,0 +1,27 @@
+{
+	"name": "db_date_id",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "release_date",
+				"type": "date"
+			},
+			{
+				"name": "date_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "release_date"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

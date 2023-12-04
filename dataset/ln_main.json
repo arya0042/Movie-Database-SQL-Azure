@@ -1,0 +1,50 @@
+{
+	"name": "ln_main",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkpersonal",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "main_title_data.csv",
+				"folderPath": "storageprivate",
+				"container": "storageprivate"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "title",
+				"type": "String"
+			},
+			{
+				"name": "genre_ids",
+				"type": "String"
+			},
+			{
+				"name": "language_id",
+				"type": "String"
+			},
+			{
+				"name": "date_id",
+				"type": "String"
+			},
+			{
+				"name": "popularity_id",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

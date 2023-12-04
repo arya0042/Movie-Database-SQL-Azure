@@ -1,0 +1,114 @@
+{
+	"name": "popular_id",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "vote_average",
+									"type": "String"
+								},
+								"sink": {
+									"name": "vote_average",
+									"type": "decimal",
+									"physicalType": "decimal",
+									"scale": 3,
+									"precision": 5
+								}
+							},
+							{
+								"source": {
+									"name": "popularity",
+									"type": "String"
+								},
+								"sink": {
+									"name": "popularity",
+									"type": "decimal",
+									"physicalType": "decimal",
+									"scale": 3,
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "vote_count",
+									"type": "String"
+								},
+								"sink": {
+									"name": "vote_count",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "popularity_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "popularity_id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ln_popular_id",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "db_popular_id",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-04T17:55:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

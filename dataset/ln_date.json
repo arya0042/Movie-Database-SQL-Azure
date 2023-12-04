@@ -1,0 +1,34 @@
+{
+	"name": "ln_date",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkpersonal",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "date_id.csv",
+				"folderPath": "storageprivate",
+				"container": "storageprivate"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "release_date",
+				"type": "String"
+			},
+			{
+				"name": "date_id",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,38 @@
+{
+	"name": "ln_language_id",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkpersonal",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "language_id.csv",
+				"folderPath": "storageprivate",
+				"container": "storageprivate"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "iso_639_1",
+				"type": "String"
+			},
+			{
+				"name": "english_name",
+				"type": "String"
+			},
+			{
+				"name": "name_id",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

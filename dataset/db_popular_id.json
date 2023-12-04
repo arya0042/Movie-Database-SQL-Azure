@@ -1,0 +1,40 @@
+{
+	"name": "db_popular_id",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "vote_average",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 3
+			},
+			{
+				"name": "popularity",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 3
+			},
+			{
+				"name": "vote_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "popularity_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "popularity"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

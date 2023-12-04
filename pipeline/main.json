@@ -1,0 +1,135 @@
+{
+	"name": "main",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "title",
+									"type": "String"
+								},
+								"sink": {
+									"name": "title",
+									"type": "varchar",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "genre_ids",
+									"type": "String"
+								},
+								"sink": {
+									"name": "genre_id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "language_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "language_id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "date_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "date_id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "popularity_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "popularity_id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "id",
+									"type": "int",
+									"physicalType": "int",
+									"precision": 10
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ln_main",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "db_main",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-04T17:55:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

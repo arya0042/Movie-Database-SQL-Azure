@@ -1,0 +1,47 @@
+{
+	"name": "db_main",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "title",
+				"type": "varchar"
+			},
+			{
+				"name": "genre_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "language_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "date_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "popularity_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "main_title_data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

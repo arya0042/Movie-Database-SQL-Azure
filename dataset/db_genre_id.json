@@ -1,0 +1,27 @@
+{
+	"name": "db_genre_id",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "genre_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "name",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "genres"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
