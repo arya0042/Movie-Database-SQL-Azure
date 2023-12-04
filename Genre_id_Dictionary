@@ -1,0 +1,7 @@
+id (integer):
+Description: Unique identifier for the genre.
+Example: 28
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+name (string):
+Description: The name or description of the genre.
+Example: "Action"
