@@ -1,0 +1,23 @@
+id (integer):
+Description: Unique identifier for the movie.
+Constraints: PRIMARY KEY
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+title (string):
+Description: The title of the movie.
+Constraints: VARCHAR(255)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+genre_id (integer):
+Description: Foreign key referencing the genre_id in the "genres" table.
+Constraints: References genres(genre_id)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+language_id (integer):
+Description: Foreign key referencing the language_id in the "language" table.
+Constraints: References language(language_id)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date_id (integer):
+Description: Foreign key referencing the date_id in the "release_date" table.
+Constraints: References release_date(date_id)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+popularity_id (integer):
+Description: Foreign key referencing the popularity_id in the "popularity" table.
+Constraints: References popularity(popularity_id)
