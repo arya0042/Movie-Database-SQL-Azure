@@ -77,3 +77,8 @@ For a detailed understanding of the data, including the meaning of each column, 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
+
+
+
+
+<img width="438" alt="Screenshot 2023-12-04 134201" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/e30b579e-bb4d-42b0-b837-b542a92b7610">
