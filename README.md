@@ -158,6 +158,10 @@ In the process of modeling the data warehouse for the Movie analysis project, I 
 
 These snippets collectively define the tables for a data warehouse, including their columns, data types, and relationships. This forms the foundation for the data model of the data warehouse.
 
+This is how it looks like in Azure databse.
+<img width="247" alt="Database Table with the columns" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/d95eff2b-4f0f-4674-97ab-ce4e2066d3b6">
+<img width="232" alt="Database Table with the columns part 2" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/e742b863-4f0a-4629-8ba1-9d4343929fb6">
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Data Cleaning and Transformation**
