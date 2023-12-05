@@ -75,6 +75,25 @@ df.to_excel('all_movie_data_copy.xlsx', index=False)
 **Data Dictionary:**
 For a detailed understanding of the data, including the meaning of each column, refer to the provided data dictionary. The data dictionary is available in this [GitHub link](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/raw_movie_data_dict). It provides a comprehensive guide to interpreting the information stored in the 'all_movie_data_copy.csv' and 'all_movie_data_copy.xlsx' files.
 
+**Data Storage complete**
+As of December 4, 2023, the datasets for the Movie Analysis project are securely stored in Microsoft Azure Storage Blob. The project involves various CSV files, each contributing essential information for analysis. The Azure Storage account 'aryanstorage2' serves as the designated repository, utilizing the 'storageprivate' container to organize and manage the data.
+
+To facilitate the upload process, a Python script utilizing the Azure SDK for Python has been employed. This script uploads CSV files to the Azure Storage Blob, ensuring that the data is efficiently stored and ready for analysis. Below is a summary of the uploaded files:
+
+1. `genre_id.csv`: Represents the genre information.
+2. `main_title_data.csv`: Contains data related to main movie titles.
+3. `date_id.csv`: Provides date-related information.
+4. `popularity_id.csv`: Captures popularity metrics.
+5. `language_id.csv`: Includes language-related data.
+6. `raw_movie_data.csv`: Houses the raw movie data for comprehensive analysis.
+7. `language_raw.csv`: Stores raw language data.
+
+These files are integral to the analysis, and their secure storage in Azure Storage Blob ensures both scalability and data security. To access a visual overview of the stored data, one can explore the 'storageprivate' container within the 'aryanstorage2' Azure Storage account. Images representing the contents can be found on the project's GitHub repository.
+
+For a detailed understanding of the datasets, the project includes data dictionaries for each CSV file: 'genre_id.csv', 'main_title_data.csv', 'date_id.csv', 'popularity_id.csv', 'language_id.csv', 'raw_movie_data.csv', and 'language_raw.csv'. These dictionaries provide valuable references, offering insights into the structure and meaning of the data.
+
+The Azure Storage Blob infrastructure, combined with the seamless upload script, establishes a robust foundation for ongoing exploration and analysis of the Movie dataset, providing transparency and accessibility to the entire project team.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
 
