@@ -203,3 +203,37 @@ df = df.sort_values(by='release_date')
 df = df.dropna()
 ```
 This section converts the 'release_date' column to datetime format. It then filters rows based on the release date (up to the cutoff date), sorts the DataFrame by 'release_date', and drops any remaining rows with missing values.
+
+Section 5: Making API Request and Processing JSON Data
+```python
+import requests
+
+url = "https://api.themoviedb.org/3/configuration/languages"
+
+headers = {
+    "accept": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDhhMmIwNzk4NTRiNjc4YzNkZGY2OTAwYjIwMWVmZCIsInN1YiI6IjY1NmQyM2RmMDg1OWI0MDEzOTUyMThjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.klFZxQuVifDTMV49eF9QvbqwceS_zoRQKPRJb1FVeeE"
+}
+
+response = requests.get(url, headers=headers)
+
+data = response.json()
+```
+In this section, the code makes an HTTP GET request to the specified URL using the `requests` library with the provided headers. The response is stored in the `data` variable after parsing it as JSON.
+
+Section 6: Data Processing and DataFrame Creation
+```python
+import pandas as pd
+
+# Convert the JSON data into a DataFrame
+df_language = pd.DataFrame(data)
+df_language.to_csv('df_language_raw.csv', index=False)
+
+df_language['name_id'] = range(1, len(df_language) + 1)
+df_language = df_language.drop(columns='name')
+
+print(df_language)
+
+df_language.to_csv('df_language.csv', index=False)
+```
+This section converts the JSON data obtained from the API response into a Pandas DataFrame (`df_language`). The raw DataFrame is saved to a CSV file ('df_language_raw.csv'). It then adds a new column 'name_id' with sequential values and drops the 'name' column. Finally, the resulting DataFrame is printed and saved to another CSV file ('df_language.csv') without an index column.
