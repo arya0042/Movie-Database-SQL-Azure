@@ -41,6 +41,10 @@ This project, designed for personal use, carries minimal associated risks, given
 By addressing these points, the company can create a streamlined solution for comprehensive movie information retrieval and analysis, tailored for personal use with minimal associated risks.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataFlow Chart
+<img width="607" alt="image" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/c6c70557-90a3-411b-8acb-e8ed4d7523d0">
+
+
 **Data Acquisition Process:**
 The data acquisition process involves utilizing The Movie Database (TMDb) API to gather information about popular movies. The Python script utilizes the `requests` library to make API calls, retrieving data from different pages. The base URL is set to "https://api.themoviedb.org/3/movie/popular?language=en-US&page=" with an API key included in the headers for authorization.
 
