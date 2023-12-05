@@ -360,3 +360,12 @@ df_genre.to_csv('df_genre.csv', index=False)
 ```
 
 This code snippet fetches movie genre data from an API, normalizes it into a DataFrame ('df_genre'), and saves it to 'df_genre.csv'. It provides a structured overview of movie genres for further analysis or reference.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Visulization**
+I seamlessly migrated data from SQL storage to Power BI, where I executed a series of insightful visualizations. The visualizations aim to uncover patterns, trends, and relationships within the dataset, enhancing data comprehension. For a detailed look at the Power BI file containing these visualizations, please refer to the associated repository.
+<img width="611" alt="Power BI Starting and Summary" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/5297d60f-b66a-46a6-954e-ecb081418767">
+
+<img width="604" alt="Power BI Languages and Years" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/f1766dea-5fad-41e8-a87d-b2a06b505d76">
+
+<img width="602" alt="Power Bi Movie Genre and Average Scores ending" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/13b92115-d137-4679-8d0c-6b96c9abaf86">
