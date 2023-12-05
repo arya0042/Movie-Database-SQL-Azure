@@ -72,10 +72,6 @@ df.to_csv('all_movie_data_copy.csv', index=False)
 df.to_excel('all_movie_data_copy.xlsx', index=False)
 ```
 
-**Data Dictionary:**
-For a detailed understanding of the data, including the meaning of each column, refer to the provided data dictionary. The data dictionary is available in this [GitHub link](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/raw_movie_data_dict). It provides a comprehensive guide to interpreting the information stored in the 'all_movie_data_copy.csv' and 'all_movie_data_copy.xlsx' files.
-
-**Data Storage complete**
 As of December 4, 2023, the datasets for the Movie Analysis project are securely stored in Microsoft Azure Storage Blob. The project involves various CSV files, each contributing essential information for analysis. The Azure Storage account 'aryanstorage2' serves as the designated repository, utilizing the 'storageprivate' container to organize and manage the data.
 
 To facilitate the upload process, a Python script utilizing the Azure SDK for Python has been employed. This script uploads CSV files to the Azure Storage Blob, ensuring that the data is efficiently stored and ready for analysis. Below is a summary of the uploaded files:
@@ -96,11 +92,11 @@ The Azure Storage Blob infrastructure, combined with the seamless upload script,
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
-
+In the process of modeling the data warehouse for the Movie analysis project, I utilized a combination of Microsoft Access for visualization and Microsoft SQL Server Management Studio (SSMS) for creating the actual database.
 
 <img width="438" alt="Screenshot 2023-12-04 134201" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/e30b579e-bb4d-42b0-b837-b542a92b7610">
 
-In the process of modeling the data warehouse for the Movie analysis project, I utilized a combination of Microsoft Access for visualization and Microsoft SQL Server Management Studio (SSMS) for creating the actual database.
+
 1. **Defining Language Table:**
    ```sql
    CREATE TABLE language (
