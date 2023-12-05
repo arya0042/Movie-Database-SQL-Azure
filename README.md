@@ -269,3 +269,18 @@ This section of code performs the following operations:
 3. Column Cleanup and Renaming: It drops redundant columns ('original_language', 'iso_639_1', 'english_name') and renames the 'name_id' column to 'original_language'.
 
 4. Display Results: It prints the resulting merged and cleaned DataFrame (`df`) and also prints the counts of unique values in the 'release_date' column (`date_counts`).
+
+Section 8: Selecting Columns, Adding a New Column, and Saving to CSV
+```python
+df_popid = df[['vote_average', 'popularity', 'vote_count']].copy()
+
+# Add a new column 'popularity_id' with sequential values
+df_popid['popularity_id'] = range(1, len(df_popid) + 1)
+
+# Print the resulting DataFrame
+print(df_popid)
+
+# Save the DataFrame to a CSV file without an index column
+df_popid.to_csv('popularity_id.csv', index=False)
+```
+This code section selects specific columns ('vote_average', 'popularity', 'vote_count') from the original DataFrame, adds a new column 'popularity_id' with sequential values, prints the result, and saves it to 'popularity_id.csv' without an index column.
