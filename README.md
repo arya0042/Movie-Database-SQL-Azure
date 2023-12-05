@@ -237,3 +237,35 @@ print(df_language)
 df_language.to_csv('df_language.csv', index=False)
 ```
 This section converts the JSON data obtained from the API response into a Pandas DataFrame (`df_language`). The raw DataFrame is saved to a CSV file ('df_language_raw.csv'). It then adds a new column 'name_id' with sequential values and drops the 'name' column. Finally, the resulting DataFrame is printed and saved to another CSV file ('df_language.csv') without an index column.
+
+
+Section 7: Merging DataFrames, Cleaning, and Displaying Results
+```python
+import pandas as pd
+
+# Assuming 'df' and 'df_language' are your DataFrames
+df_merged = pd.merge(df, df_language, left_on='original_language', right_on='iso_639_1', how='left')
+
+# Drop duplicates based on the 'id' column
+df_merged = df_merged.drop_duplicates(subset=['id'])
+
+# Drop the redundant columns and rearrange the DataFrame
+df_merged = df_merged.drop(columns=['original_language', 'iso_639_1', 'english_name'])
+df_merged = df_merged.rename(columns={'name_id': 'original_language'})
+
+df = df_merged
+print(df)
+
+date_counts = df['release_date'].value_counts()
+print("\nDate Counts:")
+print(date_counts)
+```
+
+This section of code performs the following operations:
+1. DataFrame Merging: It merges two DataFrames, `df` and `df_language`, based on the 'original_language' column in `df` and 'iso_639_1' column in `df_language`. The merging is done using a left join (`how='left'`).
+
+2. Drop Duplicates: It drops duplicate rows from the merged DataFrame based on the 'id' column.
+
+3. Column Cleanup and Renaming: It drops redundant columns ('original_language', 'iso_639_1', 'english_name') and renames the 'name_id' column to 'original_language'.
+
+4. Display Results: It prints the resulting merged and cleaned DataFrame (`df`) and also prints the counts of unique values in the 'release_date' column (`date_counts`).
