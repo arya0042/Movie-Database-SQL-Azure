@@ -367,6 +367,43 @@ df_genre.to_csv('df_genre.csv', index=False)
 ```
 
 This code snippet fetches movie genre data from an API, normalizes it into a DataFrame ('df_genre'), and saves it to 'df_genre.csv'. It provides a structured overview of movie genres for further analysis or reference.
+```python
+from azure.storage.blob import BlobServiceClient, ContentSettings
+import pandas as pd
+
+# Azure Storage Account details
+account_name = 'aryanstorage2'
+account_key = 'rrNAl5hYoD72okjY/sk1QSO0lxz83ieba/OvvHxvN9UtPHzD5taeGl2UIZX11v4NVNGTy8MISgYi+AStgwvhkA=='
+container_name = 'storageprivate'
+
+# Function to upload CSV file to Azure Storage Blob
+def upload_csv_to_blob(csv_path, blob_name):
+    # Read CSV file content
+    df = pd.read_csv(csv_path)
+    csv_content = df.to_csv(index=False)
+
+    # Create a connection to Azure Storage Blob
+    blob_service_client = BlobServiceClient(account_url=f"https://{account_name}.blob.core.windows.net", credential=account_key)
+    container_client = blob_service_client.get_container_client(container_name)
+    blob_client = container_client.get_blob_client(blob_name)
+
+    # Upload the CSV file to Azure Storage Blob
+    blob_client.upload_blob(csv_content, overwrite=True)
+
+    print(f"File uploaded to Azure Storage Blob: {blob_name}")
+
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/df_genre.csv', 'storageprivate/genre_id.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/main_title_data.csv' , 'storageprivate/main_title_data.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/date_id_file.csv' , 'storageprivate/date_id.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/popularity_id.csv' , 'storageprivate/popularity_id.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/df_language.csv' , 'storageprivate/language_id.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/all_movie_data_copy.csv' , 'storageprivate/raw_movie_data.csv')
+upload_csv_to_blob('C:/Users/khand/OneDrive/Desktop/STA 3000/df_language_raw.csv' , 'storageprivate/language_raw.csv')
+
+```
+
+This snippet uses the Azure Storage Blob service to upload multiple CSV files, including 'df_genre.csv,' 'main_title_data.csv,' 'date_id_file.csv,' 'popularity_id.csv,' 'df_language.csv,' 'all_movie_data_copy.csv,' and 'df_language_raw.csv,' to a specific container ('storageprivate') within an Azure Storage Account. The script defines a function to facilitate the upload process, reads each CSV file using pandas, converts it to a CSV-formatted string, establishes a connection to Azure Storage Blob, and uploads the content to the designated blob in the specified container. Each successful upload is confirmed with a print statement.
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Modeling**
