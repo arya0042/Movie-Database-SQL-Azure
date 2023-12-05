@@ -362,6 +362,10 @@ df_genre.to_csv('df_genre.csv', index=False)
 This code snippet fetches movie genre data from an API, normalizes it into a DataFrame ('df_genre'), and saves it to 'df_genre.csv'. It provides a structured overview of movie genres for further analysis or reference.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Modeling**
+"Already completed the modeling phase during the prior SQL and database building stages. Comprehensive details on the data model, encompassing the fact table and dimension table, can be found in the provided SQL statements above. The scripts for Data Warehouse creation and updates to earlier steps have been meticulously documented. The Data Warehouse is successfully established on Azure. Data insertion procedures have also been executed. For a visual representation of the database structure hosted on Azure, please refer to the [Database Table Part 1](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/Database%20Table%20with%20the%20columns.png) and [Database Table Part 2](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/Database%20Table%20with%20the%20columns%20part%202.png), included in the repository."
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Visulization**
 I seamlessly migrated data from SQL storage to Power BI, where I executed a series of insightful visualizations. The visualizations aim to uncover patterns, trends, and relationships within the dataset, enhancing data comprehension. For a detailed look at the Power BI file containing these visualizations, please refer to the associated repository.
 <img width="611" alt="Power BI Starting and Summary" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/5297d60f-b66a-46a6-954e-ecb081418767">
