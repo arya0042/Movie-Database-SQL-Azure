@@ -79,6 +79,63 @@ For a detailed understanding of the data, including the meaning of each column, 
 <img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
 
 
-
-
 <img width="438" alt="Screenshot 2023-12-04 134201" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/e30b579e-bb4d-42b0-b837-b542a92b7610">
+
+In the process of modeling the data warehouse for the Movie analysis project, I utilized a combination of Microsoft Access for visualization and Microsoft SQL Server Management Studio (SSMS) for creating the actual database.
+1. **Defining Language Table:**
+   ```sql
+   CREATE TABLE language (
+       iso_639_1 VARCHAR(2),
+       english_name VARCHAR(255),
+       language_id INT PRIMARY KEY
+   );
+   ```
+   This block of code creates a table named `language` with columns for language ISO code (`iso_639_1`), English name (`english_name`), and a surrogate key (`language_id`). The primary key constraint is applied to the `language_id` column.
+
+2. **Defining Popularity Table:**
+   ```sql
+   CREATE TABLE popularity (
+       vote_average DECIMAL(5, 3),
+       popularity DECIMAL(10, 3),
+       vote_count INT,
+       popularity_id INT PRIMARY KEY
+   );
+   ```
+   This block of code creates a table named `popularity` with columns for vote average (`vote_average`), popularity, and vote count, along with a surrogate key (`popularity_id`). The primary key constraint is applied to the `popularity_id` column.
+
+3. **Defining Release Date Table:**
+   ```sql
+   CREATE TABLE release_date (
+       release_date DATE,
+       date_id INT PRIMARY KEY
+   );
+   ```
+   This block of code creates a table named `release_date` with columns for release date (`release_date`) and a surrogate key (`date_id`). The primary key constraint is applied to the `date_id` column.
+
+4. **Defining Genres Table:**
+   ```sql
+   CREATE TABLE genres (
+       genre_id INT PRIMARY KEY,
+       name VARCHAR(255)
+   );
+   ```
+   This block of code creates a table named `genres` with columns for genre ID and name, along with a surrogate key (`genre_id`). The primary key constraint is applied to the `genre_id` column.
+
+5. **Defining Main Title Data Table:**
+   ```sql
+   CREATE TABLE main_title_data (
+       id INT PRIMARY KEY,
+       title VARCHAR(255),
+       genre_id INT,
+       language_id INT,
+       date_id INT,
+       popularity_id INT,
+       FOREIGN KEY (genre_id) REFERENCES genres(genre_id),
+       FOREIGN KEY (language_id) REFERENCES language(language_id),
+       FOREIGN KEY (date_id) REFERENCES release_date(date_id),
+       FOREIGN KEY (popularity_id) REFERENCES popularity(popularity_id)
+   );
+   ```
+   This block of code creates a table named `main_title_data` with columns for ID, title, and foreign keys referencing the previously defined tables (genres, language, release_date, popularity). This establishes relationships between the tables using foreign key constraints.
+
+These snippets collectively define the tables for a data warehouse, including their columns, data types, and relationships. This forms the foundation for the data model of the data warehouse.
