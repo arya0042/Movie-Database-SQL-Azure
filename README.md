@@ -154,3 +154,52 @@ In the process of modeling the data warehouse for the Movie analysis project, I 
    This block of code creates a table named `main_title_data` with columns for ID, title, and foreign keys referencing the previously defined tables (genres, language, release_date, popularity). This establishes relationships between the tables using foreign key constraints.
 
 These snippets collectively define the tables for a data warehouse, including their columns, data types, and relationships. This forms the foundation for the data model of the data warehouse.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Data Cleaning and Transformation**
+Section 1: Importing Libraries
+```python
+import pandas as pd
+import ast
+from datetime import datetime
+```
+This section imports three Python libraries:
+- `pandas` is used for data manipulation and analysis.
+- `ast` is used for safely evaluating literal expressions in strings, which is later used in the `extract_first_number` function.
+- `datetime` is imported from the datetime module for working with dates and times.
+
+Section 2: Loading and Preprocessing Data
+```python
+csv_file_path = 'all_movie_data_copy.csv'
+df = pd.read_csv(csv_file_path)
+
+columns_to_drop = ['backdrop_path', 'poster_path', 'original_title', 'video', 'adult', 'overview']
+df = df.drop(columns=columns_to_drop, errors='ignore')
+```
+This section loads a CSV file ('all_movie_data_copy.csv') into a Pandas DataFrame (`df`). It then drops specific columns (`columns_to_drop`) from the DataFrame.
+
+Section 3: Data Transformation and Cleaning
+```python
+def extract_first_number(x):
+    try:
+        x_list = ast.literal_eval(x)
+        return int(x_list[0]) if isinstance(x_list, list) and len(x_list) > 0 else None
+    except (SyntaxError, ValueError):
+        return None
+
+df['genre_ids'] = df['genre_ids'].apply(extract_first_number)
+df = df.drop_duplicates(subset=['id'])
+```
+This section defines a function (`extract_first_number`) to extract the first number from a list literal expression safely. It then applies this function to the 'genre_ids' column in the DataFrame, drops duplicate rows based on the 'id' column, and modifies the DataFrame accordingly.
+
+Section 4: Date Conversion, Filtering, and Sorting
+```python
+df['release_date'] = pd.to_datetime(df['release_date'], errors='coerce')
+
+cutoff_date = datetime(2023, 12, 4)
+df = df[df['release_date'].notna() & (df['release_date'] <= cutoff_date)]
+df = df.sort_values(by='release_date')
+df = df.dropna()
+```
+This section converts the 'release_date' column to datetime format. It then filters rows based on the release date (up to the cutoff date), sorts the DataFrame by 'release_date', and drops any remaining rows with missing values.
