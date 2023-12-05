@@ -90,6 +90,9 @@ For a detailed understanding of the datasets, the project includes data dictiona
 
 The Azure Storage Blob infrastructure, combined with the seamless upload script, establishes a robust foundation for ongoing exploration and analysis of the Movie dataset, providing transparency and accessibility to the entire project team.
 
+<img width="377" alt="Storage Project Image" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/97719790-f6c7-4877-a264-1cbfa57bf8b9">
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
 In the process of modeling the data warehouse for the Movie analysis project, I utilized a combination of Microsoft Access for visualization and Microsoft SQL Server Management Studio (SSMS) for creating the actual database.
@@ -364,6 +367,7 @@ This code snippet fetches movie genre data from an API, normalizes it into a Dat
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Modeling**
 "Already completed the modeling phase during the prior SQL and database building stages. Comprehensive details on the data model, encompassing the fact table and dimension table, can be found in the provided SQL statements above. The scripts for Data Warehouse creation and updates to earlier steps have been meticulously documented. The Data Warehouse is successfully established on Azure. Data insertion procedures have also been executed. For a visual representation of the database structure hosted on Azure, please refer to the [Database Table Part 1](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/Database%20Table%20with%20the%20columns.png) and [Database Table Part 2](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/Database%20Table%20with%20the%20columns%20part%202.png), included in the repository." For the Data Pipeline used to transfer data please look at the Movie Data Pipeline in this repo.
+<img width="251" alt="Movie Data Pipeline" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/6cf12b4a-c275-4348-87a4-bac85357f204">
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Visulization**
