@@ -284,3 +284,51 @@ print(df_popid)
 df_popid.to_csv('popularity_id.csv', index=False)
 ```
 This code section selects specific columns ('vote_average', 'popularity', 'vote_count') from the original DataFrame, adds a new column 'popularity_id' with sequential values, prints the result, and saves it to 'popularity_id.csv' without an index column.
+
+Section 9: Date Processing and CSV Export
+```python
+import pandas as pd
+
+# Assuming 'df' is your DataFrame
+df = df.dropna(subset=['release_date'])
+
+# Convert 'release_date' to datetime format
+df = df.copy()  # Create a copy of the DataFrame to avoid SettingWithCopyWarning
+df['release_date'] = pd.to_datetime(df['release_date'])
+
+# Sort the DataFrame based on 'release_date' and reset the index
+df_sorted = df.sort_values(by='release_date').reset_index(drop=True)
+
+# Create a new column 'date_id' with the desired values
+df_sorted['date_id'] = range(1, len(df_sorted) + 1)
+
+# Save the DataFrame as a CSV file
+df_sorted[['release_date', 'date_id']].to_csv('date_id_file.csv', index=False)
+
+# Display the new DataFrame with 'release_date' and 'date_id'
+print("Date:")
+print(df_sorted[['release_date', 'date_id']])
+```
+This code snippet processes a DataFrame ('df') containing movie data. It removes rows with missing values in the 'release_date' column, converts 'release_date' to datetime format, and sorts the DataFrame based on this date. A new column, 'date_id,' is created with sequential values, and the resulting DataFrame is saved to a CSV file ('date_id_file.csv'). The code then prints a subset of the DataFrame, displaying the 'release_date' and 'date_id' columns. Essentially, it organizes and assigns unique identifiers to movie release dates.
+
+
+Section 10: Data Manipulation and Merging
+```python
+# Create a new DataFrame with only 'id' and 'title'
+id_title_df = df[['id', 'title', 'genre_ids', 'original_language']].copy()
+
+# Merge the 'date_id' column from df_sorted into id_title_df based on 'id'
+id_title_df = pd.merge(id_title_df, df_sorted[['id', 'date_id']], on='id', how='left')
+id_title_df['popularity_id'] = range(1, len(id_title_df) + 1)
+
+# Rename the 'original_language' column to 'language_id'
+id_title_df = id_title_df.rename(columns={'original_language': 'language_id'})
+
+# Save the new DataFrame to a CSV file
+id_title_df.to_csv('main_title_data.csv', index=False)
+
+# Print the new DataFrame with 'id', 'title', and 'date_id'
+print("ID and Title DataFrame:")
+print(id_title_df)
+```
+In this code snippet, a new DataFrame ('id_title_df') is created by selecting specific columns ('id', 'title', 'genre_ids', 'original_language') from the original DataFrame ('df'). The 'date_id' column from the previously processed DataFrame ('df_sorted') is merged into 'id_title_df' based on the 'id' column. A new column, 'popularity_id,' is added with sequential values. The 'original_language' column is renamed to 'language_id.' The resulting DataFrame is saved to a CSV file ('main_title_data.csv'). Finally, a subset of the DataFrame is printed, displaying the 'id,' 'title,' and 'date_id' columns. Essentially, this code integrates movie information, including release dates and popularity identifiers, into a new structured DataFrame.
