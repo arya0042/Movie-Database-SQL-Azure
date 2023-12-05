@@ -1,7 +1,10 @@
 # Movie-Database-SQL-Azure
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Company (aka. me) Description:**
-The company, operating for personal use, delves into the entertainment industry, aiming to collect data on 6000 movies via The Movie Database (TMDb) API. Essential data points include ratings, release years, average scores, genres, with sorting capabilities.
+**Company (aka. me) Description/ Business Problem:**
+The streaming platform aims to enhance user satisfaction and attract a wider audience by strategically addressing key challenges, including increasing the average popularity score and diversifying content across languages. The goal is to optimize content strategy, boost viewer engagement, and solidify the platform's competitive position in the streaming industry.
+
+**Solution**
+To address the streaming platform's challenges, a multifaceted solution involves implementing targeted marketing campaigns to promote popular content, expanding language-specific content creation or acquisition, and leveraging user data analytics to understand preferences better. Implementing strategies to encourage user reviews, such as incentivizing feedback or incorporating user ratings into content recommendations, is crucial.
 
 **Requirements:**
 1. **Data Collection:** Utilize TMDb API for 6000 movies.
@@ -10,12 +13,6 @@ The company, operating for personal use, delves into the entertainment industry,
 4. **Average Scores:** Calculate and showcase average scores.
 5. **Genres:** Categorize movies into genres.
 6. **Sorting:** Implement sorting based on ratings, release years, average scores, and genres.
-
-**Missing Requirements:**
-1. **Authentication:** Ensure secure access to TMDb API.
-2. **Storage:** Define a storage mechanism for collected data.
-3. **Update Frequency:** Specify data update intervals.
-4. **Scalability:** Consider scalability for future expansion.
 
 **Solution:**
 1. **Data Handling:**
