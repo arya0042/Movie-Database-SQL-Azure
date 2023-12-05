@@ -76,4 +76,4 @@ df.to_excel('all_movie_data_copy.xlsx', index=False)
 For a detailed understanding of the data, including the meaning of each column, refer to the provided data dictionary. The data dictionary is available in this [GitHub link](https://github.com/arya0042/Movie-Database-SQL-Azure/blob/main/raw_movie_data_dict). It provides a comprehensive guide to interpreting the information stored in the 'all_movie_data_copy.csv' and 'all_movie_data_copy.xlsx' files.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[!alt text](SQl Databse Azure.png)
+<img width="358" alt="SQl Databse Azure" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/b441323b-f3a0-4cc2-affa-83cc1468852d">
