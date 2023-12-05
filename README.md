@@ -332,3 +332,31 @@ print("ID and Title DataFrame:")
 print(id_title_df)
 ```
 In this code snippet, a new DataFrame ('id_title_df') is created by selecting specific columns ('id', 'title', 'genre_ids', 'original_language') from the original DataFrame ('df'). The 'date_id' column from the previously processed DataFrame ('df_sorted') is merged into 'id_title_df' based on the 'id' column. A new column, 'popularity_id,' is added with sequential values. The 'original_language' column is renamed to 'language_id.' The resulting DataFrame is saved to a CSV file ('main_title_data.csv'). Finally, a subset of the DataFrame is printed, displaying the 'id,' 'title,' and 'date_id' columns. Essentially, this code integrates movie information, including release dates and popularity identifiers, into a new structured DataFrame.
+
+Section 11: API Request, Data Processing, and CSV Export
+```python
+import requests
+import pandas as pd
+
+url = "https://api.themoviedb.org/3/genre/movie/list?language=en"
+
+headers = {
+    "accept": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDhhMmIwNzk4NTRiNjc4YzNkZGY2OTAwYjIwMWVmZCIsInN1YiI6IjY1NmQyM2RmMDg1OWI0MDEzOTUyMThjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.klFZxQuVifDTMV49eF9QvbqwceS_zoRQKPRJb1FVeeE"
+
+}
+
+response = requests.get(url, headers=headers)
+
+data = response.json()
+
+# Normalize the 'genres' column
+df_genre = pd.json_normalize(data['genres'])
+
+print(df_genre)
+
+# Save the new DataFrame to a CSV file
+df_genre.to_csv('df_genre.csv', index=False)
+```
+
+This code snippet fetches movie genre data from an API, normalizes it into a DataFrame ('df_genre'), and saves it to 'df_genre.csv'. It provides a structured overview of movie genres for further analysis or reference.
