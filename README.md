@@ -416,6 +416,8 @@ This snippet uses the Azure Storage Blob service to upload multiple CSV files, i
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Visulization**
 I seamlessly migrated data from SQL storage to Power BI, where I executed a series of insightful visualizations. The visualizations aim to uncover patterns, trends, and relationships within the dataset, enhancing data comprehension. For a detailed look at the Power BI file containing these visualizations, please refer to the associated repository.
+
+
 <img width="611" alt="Power BI Starting and Summary" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/5297d60f-b66a-46a6-954e-ecb081418767">
 
 <img width="604" alt="Power BI Languages and Years" src="https://github.com/arya0042/Movie-Database-SQL-Azure/assets/43891695/f1766dea-5fad-41e8-a87d-b2a06b505d76">
